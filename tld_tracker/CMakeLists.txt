@@ -27,9 +27,10 @@ include(ExternalProject)
 
 externalproject_add(opentld
   PREFIX libopentld
-  SOURCE_DIR ${CMAKE_SOURCE_DIR}/ros_opentld/tld_tracker/libopentld/	
+  SOURCE_DIR ${PROJECT_SOURCE_DIR}/libopentld/	
   
   BUILD_IN_SOURCE 1
+ 
   BUILD_COMMAND   cmake --build .
   INSTALL_COMMAND ${PROJECT_SOURCE_DIR}/opentld/install.sh
                   ${OPENTLD_OUTPUT_DIR}
