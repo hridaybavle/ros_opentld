@@ -23,13 +23,12 @@ set(OPENTLD_OUTPUT_DIR ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/../)
 
 include(ExternalProject)
 
+#message(${CMAKE_SOURCE_DIR})
+
 externalproject_add(opentld
   PREFIX libopentld
-  SVN_REPOSITORY  https://github.com/Ronan0912/OpenTLD/trunk/
-  SVN_REVISION    -rHEAD
-  PATCH_COMMAND   patch -p0 -i ${PROJECT_SOURCE_DIR}/opentld/patches/diff1.patch
-                  &&
-                  patch -p0 -i ${PROJECT_SOURCE_DIR}/opentld/patches/diff2.patch
+  SOURCE_DIR ${CMAKE_SOURCE_DIR}/ros_opentld/tld_tracker/libopentld/	
+  
   BUILD_IN_SOURCE 1
   BUILD_COMMAND   cmake --build .
   INSTALL_COMMAND ${PROJECT_SOURCE_DIR}/opentld/install.sh
