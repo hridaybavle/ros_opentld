@@ -28,9 +28,13 @@
 #define FOREGROUNDDETECTOR_H_
 
 #include <vector>
+#include <opencv2/core/version.hpp>
 
+#if CV_MAJOR_VERSION == 3
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
+#endif
+
 #include <opencv/cv.h>
 
 #include "DetectionResult.h"
